@@ -1,5 +1,7 @@
 package com.yf.web.ai.base;
 
+import com.yf.web.ai.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.*;
@@ -13,9 +15,13 @@ import java.io.IOException;
 @Component
 @WebFilter(filterName = "myFilter",urlPatterns = "/**")
 public class MyFilter implements Filter {
+
+    @Autowired
+    private User user;
+
     @Override
     public void init(FilterConfig filterConfig) {
-        System.out.println("初始化过滤器");
+        System.out.println("初始化过滤器:"+user.getName());
     }
 
     @Override
