@@ -24,10 +24,10 @@ public class MyInterceptor implements HandlerInterceptor {
         //返回false 取消请求  true 继续请求
         String requestURI = httpServletRequest.getRequestURI();
         System.out.println("请求url:" + requestURI);
-        if (requestURI.endsWith("getOldData")) {
+        /*if (requestURI.endsWith("getOldData")) {
             httpServletResponse.sendRedirect("http://www.baidu.com?"+requestURI);
            return false;
-        }
+        }*/
         return true;
     }
 

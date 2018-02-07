@@ -21,7 +21,7 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     public String noHandleException(Exception ex){
-        log.error("error:["+ex.getMessage()+"]");
+        log.error("error:",ex);
         return "ApiNotFound";
     }
 
@@ -29,7 +29,7 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     public String requestMissingServletRequest(MissingServletRequestParameterException ex){
-        log.error("error:["+ex.getMessage()+"]");
+        log.error("error:",ex);
         return "ParamNecessary";
     }
 
@@ -37,7 +37,7 @@ public class GlobalExceptionHandler {
     @ResponseBody
     @ResponseStatus(HttpStatus.OK)
     public String   error(Exception e){
-        log.error("error:["+e.getMessage()+"]");
+        log.error("error:",e);
         return "系统异常";
     }
 
