@@ -16,7 +16,7 @@ public class WebSocketConfig extends WebMvcConfigurerAdapter  implements WebSock
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry webSocketHandlerRegistry) {
         // 允许连接的域,只能以http或https开头
-        String[] allowsOrigins = {"http://127.0.0.1:1213", "http://localhost:1213"};
+        String[] allowsOrigins = {"http://127.0.0.1:10001", "http://localhost:10001"};
         webSocketHandlerRegistry.addHandler(messageHandler(),"/message").addInterceptors(handshakeInterceptor()).setAllowedOrigins(allowsOrigins);
     }
 
